@@ -4,6 +4,7 @@ const includeUppercaseElement = document.getElementById('includeUppercase')
 const includeNumbersElement = document.getElementById('includeNumbers')
 const includeSymbolsElement = document.getElementById('includeSymbols')
 const form = document.getElementById('passwordGeneratorForm')
+const copyBtn = document.getElementById('copy-btn')
 const passwordDisplay = document.getElementById('passwordDisplay')
 
 const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
@@ -57,3 +58,8 @@ function syncCharacterAmount(e) {
   characterAmountNumber.value = value
   characterAmountRange.value = value
 }
+
+// copy btn
+copyBtn.addEventListener('click', () => {
+  navigator.clipboard.writeText(passwordDisplay.innerText)
+})
